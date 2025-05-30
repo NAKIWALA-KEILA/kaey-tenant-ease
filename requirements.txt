@@ -1,0 +1,4 @@
+Flask==3.0.0
+num2words==0.5.13
+weasyprint==61.1
+gunicorn==21.2.0
