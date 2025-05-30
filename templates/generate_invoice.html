@@ -1,0 +1,18 @@
+{% if tenant_id %}
+<h2>Enter Meter Readings</h2>
+<form method="POST">
+  <label>UEDCL Previous Reading:</label>
+  <input type="number" name="uedcl_prev" required><br><br>
+
+  <label>UEDCL Current Reading:</label>
+  <input type="number" name="uedcl_curr" required><br><br>
+
+  <label>NWSC Previous Reading:</label>
+  <input type="number" name="nswc_prev" required><br><br>
+
+  <label>NWSC Current Reading:</label>
+  <input type="number" name="nswc_curr" required><br><br>
+
+  <button type="submit">Generate Invoice</button>
+</form>
+{% endif %}
