@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice - {{ invoice.name }}</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+    .total { font-weight: bold; font-size: 1.2em; }
+    .amount-in-words { margin-top: 30px; font-style: italic; }
+  </style>
+</head>
+<body>
+  <h2>KAEY TENANT_EASE INVOICE</h2>
+  <p><strong>Tenant:</strong> {{ invoice.name }}</p>
+  <p><strong>House Number:</strong> {{ invoice.house_number }}</p>
+  <p><strong>Contact:</strong> {{ invoice.contact }}</p>
+
+  <table>
+    <tr><th>Description</th><th>Amount (UGX)</th></tr>
+    <tr><td>Base Rent</td><td>{{ invoice.rent }}</td></tr>
+    <tr><td>UEDCL Usage ({{ invoice.uedcl_units }} x 1200)</td><td>{{ invoice.uedcl_cost }}</td></tr>
+    <tr><td>NWSC Usage ({{ invoice.nswc_units }} x 7000)</td><td>{{ invoice.nswc_cost }}</td></tr>
+    <tr><td>Security Fee</td><td>{{ invoice.security_fee }}</td></tr>
+    <tr><td>Garbage Fee</td><td>{{ invoice.garbage_fee }}</td></tr>
+    <tr><td class="total">Total Due</td><td class="total">{{ invoice.total }}</td></tr>
+  </table>
+
+  <div class="amount-in-words">
+    Amount in Words: {{ invoice.amount_in_words }}
+  </div>
+</body>
+</html>
